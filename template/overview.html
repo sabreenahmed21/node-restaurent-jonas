@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Nunito:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>NODE HOME CHEF</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+      }
+
+      :root {
+        --dark-grey: #474747;
+        --light-grey: #606060;
+        --light-orange: #ff8d2d;
+        --dark-light-orange: #ee6d01;
+        --dark-orange: #d66203;
+        --color-white: #fefcfc;
+        --title-family: "Megrim", cursive;
+        --gradient: linear-gradient(
+          to bottom right,
+          var(--light-orange),
+          var(--dark-light-orange)
+        );
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        min-height: 100vh;
+        /* font-size: 1.8rem; */
+        background-image: linear-gradient(
+          to bottom right,
+          var(--light-orange),
+          var(--dark-light-orange)
+        );
+        color: var(--light-grey);
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      h1 {
+        font-family: var(--title-family);
+        position: relative;
+        color: var(--color-white);
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      h1::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 38%;
+        height: 4rem;
+        width: 25%;
+        background-image: linear-gradient(
+          to bottom right,
+          var(--light-orange),
+          var(--dark-light-orange)
+        );
+        box-shadow: 0px 30px 80px rgba(214, 98, 3, 0.73);
+        z-index: -1;
+        transform: skewY(3deg);
+      }
+
+      .card-container {
+        margin-top: 10rem;
+        /* margin: auto; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        background-color: var(--color-white);
+        display: flex;
+        margin-bottom: 7rem;
+        transform: skewX(-15deg);
+        overflow: hidden;
+        box-shadow: 0px 40px 30px rgba(118, 54, 1, 0.22);
+        transition: transform 0.2s ease-in;
+        /* border-radius: 1rem; */
+        width: 833px;
+      }
+
+      .card:hover {
+        box-shadow: 0px 50px 30px rgba(118, 54, 1, 0.28);
+        transform: scale(1.06) skewX(-15deg);
+        border: none;
+      }
+
+      .card__emoji {
+        font-size: 3rem;
+        padding: 1rem 2.5rem;
+        letter-spacing: -3rem;
+      }
+
+      .card__title-box {
+        background-image: var(--gradient);
+        transform: skewX(-15deg);
+        margin: 0 0 0 3rem;
+      }
+
+      .card__title {
+        color: var(--color-white);
+        font-family: var(--title-family);
+        font-weight: 300;
+        padding: 2rem 2rem;
+        font-size: 2.2rem;
+        transform: skewX(15deg);
+      }
+
+      .card__detail {
+        display: flex;
+        padding: 0rem 2rem;
+        justify-content: space-between;
+        transform: skewX(-15deg);
+      }
+
+      .card__detail-content {
+        border-right: 2px solid #d3d3d3;
+        font-size: 2rem;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card__detail-content:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      .card__detail-text {
+        transform: skewX(15deg);
+      }
+
+      .card__detail-type {
+        font-size: 1.8rem;
+        background-image: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .card__detail-price {
+        font-size: 2rem;
+        font-family: var(--title-family);
+        font-weight: 600;
+      }
+
+      .card__link:link,
+      .card__link:visited {
+        background-color: var(--light-orange);
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(10%) skewX(-15deg);
+        transition: all 0.2s ease-in;
+      }
+
+      .card__link:hover {
+        background-color: var(--dark-light-orange);
+      }
+
+      .card__link-text {
+        transform: skewX(15deg);
+      }
+
+      .not-vegetarian {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1 class="restaurant-name">🌮 Node Home Chef 🍲</h1>
+      <div class="card-container">{%PRODUCT__CARD%}</div>
+    </main>
+  </body>
+</html>
